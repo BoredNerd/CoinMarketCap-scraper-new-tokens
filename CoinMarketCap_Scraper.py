@@ -5,7 +5,6 @@ import subprocess
 import os
 import datetime
 import requests
-import pathlib
 
 html_text = requests.get("https://coinmarketcap.com/new/").text
 soup = BeautifulSoup(html_text, "lxml")
