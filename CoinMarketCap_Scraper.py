@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from openpyxl import Workbook, load_workbook
+from openpyxl import Workbook
 from openpyxl.chart import PieChart, Reference
 import subprocess
 import os
