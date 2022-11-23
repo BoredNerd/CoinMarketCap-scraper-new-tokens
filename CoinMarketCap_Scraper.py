@@ -3,11 +3,11 @@ from openpyxl import Workbook
 from openpyxl.chart import PieChart, Reference
 from openpyxl.styles import Font, Alignment
 from openpyxl.worksheet.table import Table, TableStyleInfo
+from openpyxl.chart.series import DataPoint
 import subprocess
 import os
 import datetime
 import requests
-from openpyxl.chart.series import DataPoint
 
 wb = Workbook()
 ws = wb.active
@@ -20,7 +20,7 @@ ws.sheet_view.zoomScale = 130  # set the zoom level
 
 html_text = requests.get("https://coinmarketcap.com/new/").text  # request the page HTML
 soup = BeautifulSoup(html_text, "lxml") # parse the page
-token = soup.find_all("tbody")
+token = soup.select("tbody")
 
 count = 1 #To enumerate the tokens printed in terminal
 for tr in token:
